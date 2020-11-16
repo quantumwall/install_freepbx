@@ -215,4 +215,5 @@ echo put asterisk in autorun####
 systemctl enable asterisk
 systemctl start asterisk
 asterisk
+echo "####Please restart the server####"
 exit 0
