@@ -3,7 +3,7 @@ echo check OS####
 
 os=($(cat /etc/*release | egrep -e 'ID=' -e 'VERSION_ID=' | tr -d '"' | cut -d = -f2))
 if [[ ${os[0]} != centos || ${os[1]} != 7 ]]; then
-echo "This program only works on the Cenos7 operating system"
+echo "This program only works on the CentOS 7 operating system"
 echo "Your operation system is ${os[0]} ${os[1]}"
 exit 1
 fi
