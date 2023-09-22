@@ -191,6 +191,11 @@ echo updating####
 yum -y update
 
 ######################
+echo install freepbx####
+
+yum -y install freepbx
+
+######################
 echo install asterisk-version-switch####
 
 yum -y install asterisk-version-switch
@@ -199,7 +204,7 @@ yum -y install asterisk-version-switch
 echo editing the current version in asterisk-version-switch####
  
 sed -i 's/\(curent_version=\).*/\1\"18\"/' /usr/local/sbin/asterisk-version-switch
-sed -i 's/\(fwversion=\).*/\1\"16\"/' /usr/local/sbin/asterisk-version-switch
+sed -i 's/\(fwversion=\).*/\1\"15\"/' /usr/local/sbin/asterisk-version-switch
 
 echo launching asterisk-version-switch####
 asterisk-version-switch
@@ -207,7 +212,8 @@ asterisk-version-switch
 ######################
 echo configuring the web server on port 80####
 
-sed -i '/^#Listen/c Listen 80' /etc/httpd/conf/httpd.conf 
+sed -i '/^#Listen/c Listen 80' /etc/httpd/conf/httpd.conf
+sed -i 's/^\(User\|Group\).*/\1 asterisk/' /etc/httpd/conf/httpd.conf
 systemctl enable httpd
 systemctl restart httpd
 
