@@ -198,7 +198,8 @@ yum -y install asterisk-version-switch
 ######################
 echo editing the current version in asterisk-version-switch####
  
-sed -i 's/\(^current_version=\).*/\1\"16\"/' /usr/local/sbin/asterisk-version-switch
+sed -i 's/\(curent_version=\).*/\1\"18\"/' /usr/local/sbin/asterisk-version-switch
+sed -i 's/\(fwversion=\).*/\1\"16\"/' /usr/local/sbin/asterisk-version-switch
 
 echo launching asterisk-version-switch####
 asterisk-version-switch
